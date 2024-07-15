@@ -1,11 +1,11 @@
 {
-  "dataset_type": "audio_dir",
+  "dataset_type": "s3",
   "datasets": [
       {
-          "id": "my_audio",
-          "path": "/content/stable_open_model_files/sample_songs/",
-          "custom_metadata_module": "/content/stable_open_model_files/custom_metadata.py"
+      "id": "s3-test",
+      "s3_path": "s3://sagemaker-eu-west-2-339713155623/webdataset_audio/",
+      "custom_metadata_module": "./custom_metadata.py"
       }
-  ],
+    ],
   "random_crop": true
 }

@@ -4,6 +4,7 @@ import os
 import torch
 import pytorch_lightning as pl
 import random
+import argparse
 
 from stable_audio_tools.data.dataset import create_dataloader_from_config
 from stable_audio_tools.models import create_model_from_config
@@ -21,6 +22,53 @@ class ModelConfigEmbedderCallback(pl.Callback):
 
     def on_save_checkpoint(self, trainer, pl_module, checkpoint):
         checkpoint["model_config"] = self.model_config
+
+def get_all_args():
+    parser = argparse.ArgumentParser(description='Training script for Stable Audio Tools')
+
+    # File paths
+    parser.add_argument('--model-config', type=str, required=True,
+                        help='Path to model config JSON file (relative to project_base_path)')
+    parser.add_argument('--dataset-config', type=str, required=True,
+                        help='Path to dataset config JSON file (relative to project_base_path)')
+
+    # Training settings
+    parser.add_argument('--name', type=str, default='stable-audio-training',
+                        help='Name of the training run (for WandB)')
+    parser.add_argument('--save-dir', type=str, default='./checkpoints',
+                        help='Directory to save checkpoints')
+    parser.add_argument('--pretrained-ckpt-path', type=str, default=None,
+                        help='Path to pretrained checkpoint')
+    parser.add_argument('--seed', type=int, default=42,
+                        help='Random seed')
+    parser.add_argument('--num-workers', type=int, default=2,
+                        help='Number of dataloader workers')
+    parser.add_argument('--checkpoint-every', type=int, default=10000,
+                        help='Number of training steps between checkpoints')
+    parser.add_argument('--strategy', type=str, default=None,
+                        help='Multi-GPU training strategy (e.g., ddp, deepspeed)')
+    parser.add_argument('--num-gpus', type=int, default=4,
+                        help='Number of GPUs to use for training')
+    parser.add_argument('--num-nodes', type=int, default=1,
+                        help='Number of nodes to use for training (for multi-node training)')
+    parser.add_argument('--precision', type=int, default='16', choices=[32, 16, 'bf16', '16-mixed'],
+                        help='Floating-point precision to use during training (32, 16, bf16, 16-mixed)')
+    parser.add_argument('--accum-batches', type=int, default=1,
+                        help='Number of batches for gradient accumulation')
+    parser.add_argument('--gradient-clip-val', type=float, default=1.0,
+                        help='Value for gradient clipping')
+    parser.add_argument('--remove-pretransform-weight-norm', type=str, default=None, choices=[None, "pre_load", "post_load"],
+                        help='Whether to remove weight norm from the pretransform, and when to do it')
+    parser.add_argument('--pretransform-ckpt-path', type=str, default=None,
+                        help='Path to an unwrapped pretransform checkpoint')
+    parser.add_argument('--batch-size', type=int, default=8,
+                        help='Batch size per GPU')
+    parser.add_argument('--ckpt-path', type=str, default=None,
+                        help='Path to checkpoint to resume training from')
+
+
+    args = parser.parse_args()
+    return args
 
 def main():
 
