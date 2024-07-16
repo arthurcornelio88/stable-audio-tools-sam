@@ -1,0 +1,8 @@
+# List of required packages with optional versions
+
+stable-audio-tools
+torch
+torchvision
+torchaudio
+deepspeed
+#flash-attn
