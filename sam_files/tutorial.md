@@ -9,4 +9,4 @@ We have four main steps :
 3) Downloading and renaming the audio files (.mp3)
 4) Verifying audio files, JSON files and dataframe
 
-
+## 1) Filtering the scrapped dataset to a dataframe (.csv)
