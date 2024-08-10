@@ -15,5 +15,7 @@ a) Open and run [Cleaning and filtering scrapped dataset.ipynb](changer) in Goog
 
 ## 2) Creation of JSON files (.json)
 
-!!! create a .env in /sam_files and put GITHUB_PROFILE_NAME={YOUR-GITHUB-PROF_NAME}
-
+a) Open and run [Creating JSON files.ipynb](changer) in Google Colab (GDrive) or locally (Github Repo)
+- Attention to :
+  - Local paths
+  - Create your .env file in /sam_files, with GITHUB_PROFILE_NAME={your-github-profile-name}
