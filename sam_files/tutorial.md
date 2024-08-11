@@ -9,6 +9,14 @@ We have four main steps :
 3) Downloading and renaming the audio files (.mp3)
 4) Verifying audio files, JSON files and dataframe
 
+## 0) Create your path variables
+- in Google Colab:
+  - secrets :
+    - YOUR_PATH_TO_SAM={after/mounting/grive/to/S.A.M}
+- in local (downloaded repository) :
+  - create .env in /sam_files :
+    - GITHUB_PROFILE_NAME={your-github-profile-name}
+
 ## 1) Filtering the scrapped dataset to a dataframe (.csv)
 
 a) Open and run [Cleaning and filtering scrapped dataset.ipynb](changer) in Google Colab (GDrive) or locally (Github Repo)
@@ -18,4 +26,5 @@ a) Open and run [Cleaning and filtering scrapped dataset.ipynb](changer) in Goog
 a) Open and run [Creating JSON files.ipynb](changer) in Google Colab (GDrive) or locally (Github Repo)
 - Attention to :
   - Local paths
-  - Create your .env file in /sam_files, with GITHUB_PROFILE_NAME={your-github-profile-name}
+
+## 3) Downloading and renaming the audio files (.mp3)
