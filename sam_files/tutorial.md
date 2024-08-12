@@ -20,12 +20,12 @@ We have four main steps :
 
 ## 1) Filtering the scrapped dataset to a dataframe (.csv)
 
-a) Open and run [Cleaning and filtering scrapped dataset.ipynb](changer) in Google Colab (GDrive) or locally (Github Repo)
+a) Open and run [Cleaning and filtering scrapped dataset.ipynb](changer)
 
 ## 2) Creation of JSON files (.json)
 
-a) Open and run [Creating JSON files.ipynb](changer) in Google Colab (GDrive) or locally (Github Repo)
-- Attention to :
-  - Local paths
+a) Open and run [Creating JSON files.ipynb](changer)
 
 ## 3) Downloading and renaming the audio files (.mp3)
+
+a) Open and run [Downloading and renaming the audio files (.mp3).ipynb](changer)
