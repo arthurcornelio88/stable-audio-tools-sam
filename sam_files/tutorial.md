@@ -13,6 +13,7 @@ We have four main steps :
 - in Google Colab:
   - secrets :
     - YOUR_PATH_TO_SAM={after/mounting/grive/to/S.A.M}
+    - GITHUB_PROFILE_NAME={your-github-profile-name}
 - in local (downloaded repository) :
   - create .env in /sam_files :
     - GITHUB_PROFILE_NAME={your-github-profile-name}
