@@ -1,0 +1,11 @@
+Source,Destination,Start,End,Md5,UploadId,Source Size,Bytes Transferred,Result,Description
+file://json/json_test/7_audio7test.json,gs://sam-dataset/10__files_2024-08-13_18-04-03/json/json_test/7_audio7test.json,2024-08-13T16:04:04.972930Z,2024-08-13T16:04:05.621351Z,n7tlwVl7SnvW4Pcr3VKbgw==,,197,197,OK,
+file://json/json_test/9_audio9test.json,gs://sam-dataset/10__files_2024-08-13_18-04-03/json/json_test/9_audio9test.json,2024-08-13T16:04:04.951354Z,2024-08-13T16:04:05.629550Z,mvh4w0QtiMovd84AMxhIog==,,220,220,OK,
+file://json/json_test/8_audio8test.json,gs://sam-dataset/10__files_2024-08-13_18-04-03/json/json_test/8_audio8test.json,2024-08-13T16:04:04.911504Z,2024-08-13T16:04:05.635410Z,5odYo+HXsuTbj6MMPSg1nQ==,,200,200,OK,
+file://json/json_test/3_audio3test.json,gs://sam-dataset/10__files_2024-08-13_18-04-03/json/json_test/3_audio3test.json,2024-08-13T16:04:05.018088Z,2024-08-13T16:04:05.648145Z,ooPcU/6FRSZ9SHxR6tcF4Q==,,218,218,OK,
+file://json/json_test/4_audio4test.json,gs://sam-dataset/10__files_2024-08-13_18-04-03/json/json_test/4_audio4test.json,2024-08-13T16:04:04.942003Z,2024-08-13T16:04:05.648627Z,+tqJ/pyl6Ot3Mqxo8Ma5Kw==,,182,182,OK,
+file://json/json_test/1_audio1test.json,gs://sam-dataset/10__files_2024-08-13_18-04-03/json/json_test/1_audio1test.json,2024-08-13T16:04:04.952783Z,2024-08-13T16:04:05.652077Z,D3s8DJwjFHqpMv8wjjNlXQ==,,204,204,OK,
+file://json/json_test/10_audio10test.json,gs://sam-dataset/10__files_2024-08-13_18-04-03/json/json_test/10_audio10test.json,2024-08-13T16:04:04.991297Z,2024-08-13T16:04:05.660801Z,9uSPCGPEYvfnivoZN0F8dw==,,217,217,OK,
+file://json/json_test/6_audio6test.json,gs://sam-dataset/10__files_2024-08-13_18-04-03/json/json_test/6_audio6test.json,2024-08-13T16:04:05.008481Z,2024-08-13T16:04:05.669357Z,89QdvyXVpbL1SV9fjF0M6g==,,199,199,OK,
+file://json/json_test/5_audio5test.json,gs://sam-dataset/10__files_2024-08-13_18-04-03/json/json_test/5_audio5test.json,2024-08-13T16:04:04.948949Z,2024-08-13T16:04:05.670098Z,+tqJ/pyl6Ot3Mqxo8Ma5Kw==,,182,182,OK,
+file://json/json_test/2_audio2test.json,gs://sam-dataset/10__files_2024-08-13_18-04-03/json/json_test/2_audio2test.json,2024-08-13T16:04:05.058685Z,2024-08-13T16:04:05.672942Z,CWJHQtABVFIU+0QxgNOq6Q==,,187,187,OK,

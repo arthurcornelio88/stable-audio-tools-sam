@@ -24,6 +24,10 @@ def remove_integer_prefix_from_filenames(folder_path):
             # Rename the file
             os.rename(old_file_path, new_file_path)
             print(f"Renamed '{file}' to '{new_filename}'")
+        else:
+            flag = 1
+    if flag == 1:
+        print("No prefix to erase.")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Rename files by removing integer prefixes from filenames.')

@@ -119,6 +119,7 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+
 # Environments
 .env
 .venv
@@ -127,7 +128,10 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+sam_files/notebooks/dataset for fine-tuning/.env
 
+#google
+sam_files/sam-gcp-432413-a486ac282f5c.json
 # Spyder project settings
 .spyderproject
 .spyproject
