@@ -25,6 +25,8 @@ We’ll explain how to proceed with the creation of the dataset to fine-tune our
 
 - Open and run [Downloading and renaming the audio files (.mp3).ipynb](https://github.com/arthurcornelio88/stable-audio-tools-sam/blob/main/sam_files/notebooks/dataset%20for%20fine-tuning/4%20-%20Downloading%20and%20renaming%20the%20audio%20files%20(.mp3)%20copy.ipynb)
 
-## 5 - 5 - Uploading to S.A.M. bucket
+## 5 - Uploading to S.A.M. bucket
 
 - Open and run [Uploading to S.A.M. bucket.ipynb](https://github.com/arthurcornelio88/stable-audio-tools-sam/blob/main/sam_files/notebooks/dataset%20for%20fine-tuning/5%20-%20Uploading%20to%20S.A.M.%20drive.ipynb)
+
+Bravo !
