@@ -6,9 +6,9 @@ We’ll explain how to proceed with the creation of the dataset to fine-tune our
 - in Google Colab:
   - Open a new Google Colab and clone the repository, running this code below in a blank cell:
     - `!gh repo clone arthurcornelio88/stable-audio-tools-sam`
-  - Keep going on "1 - Prepare the environment.ipynb" notebook
+  - Keep going on [1 - Prepare the environment.ipynb](https://github.com/arthurcornelio88/stable-audio-tools-sam/blob/main/sam_files/notebooks/dataset%20for%20fine-tuning/1%20-%20Prepare%20environment.ipynb) notebook
 - in local (downloaded repository) :
-  - Go ahead to the first notebook "1 - Prepare the environment.ipynb"., located at
+  - Go ahead to the first notebook [1 - Prepare the environment.ipynb](https://github.com/arthurcornelio88/stable-audio-tools-sam/blob/main/sam_files/notebooks/dataset%20for%20fine-tuning/1%20-%20Prepare%20environment.ipynb), located at
   - `sam_files/notebooks/dataset for fine-tuning`
 
 ### **Attetion! Don't do "run all cells" in these notebooks.** !
