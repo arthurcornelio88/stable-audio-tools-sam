@@ -11,11 +11,11 @@ We’ll explain how to proceed with the creation of the dataset to fine-tune our
   - Go ahead to the first notebook "1 - Prepare the environment.ipynb"., located at
   - `sam_files/notebooks/dataset for fine-tuning`
 
-# **Attetion! Don't do "run all cells" in these notebooks.** !
+### **Attetion! Don't do "run all cells" in these notebooks.** !
 
 ## 2 - Filtering the scrapped dataset to a dataframe (.csv)
 
-- Open and run [2 - Cleaning and filtering scrapped dataset.ipynb]([https://github.com/arthurcornelio88/stable-audio-tools-sam/blob/main/sam_files/notebooks/dataset%20for%20fine-tuning/2%20-%20Cleaning%20and%20filtering%20scrapped%20dataset.ipynb])
+- Open and run [2 - Cleaning and filtering scrapped dataset.ipynb](https://github.com/arthurcornelio88/stable-audio-tools-sam/blob/main/sam_files/notebooks/dataset%20for%20fine-tuning/2%20-%20Cleaning%20and%20filtering%20scrapped%20dataset.ipynb)
 
 ## 3 - Creation of JSON files (.json)
 
