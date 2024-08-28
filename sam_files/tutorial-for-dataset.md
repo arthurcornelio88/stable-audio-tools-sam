@@ -31,8 +31,8 @@ We’ll explain how to proceed with the creation of the dataset to fine-tune our
 ## 5 - Uploading to S.A.M. bucket
 
 - If in GCP :
-- - Open and run [5 - Uploading to S.A.M. bucket.ipynb](https://github.com/arthurcornelio88/stable-audio-tools-sam/blob/main/sam_files/notebooks/dataset%20for%20fine-tuning/5%20-%20Uploading%20to%20S.A.M.%20drive.ipynb)
+  - Open and run [Local 5 - Uploading to S.A.M. bucket.ipynb](https://github.com/arthurcornelio88/stable-audio-tools-sam/blob/main/sam_files/notebooks/dataset%20for%20fine-tuning/5%20-%20Uploading%20to%20S.A.M.%20drive.ipynb)
 - If in S3 Bucket :
-- - Open and run [S3 5 - Uploading to S.A.M. bucket.ipynb]()
+  - Open and run [S3 5 - Uploading to S.A.M. bucket.ipynb]()
 
 Bravo !
