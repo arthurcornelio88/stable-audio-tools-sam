@@ -1,0 +1,6 @@
+pandas
+nltk
+pathlib
+scikit-learn
+google.cloud
+boto3

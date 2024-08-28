@@ -2,6 +2,7 @@ import os
 import pandas as pd
 from pathlib import Path
 import logging
+import argparse
 
 def verify_renaming_with_csv(folder_path, csv_path):
     """
@@ -13,41 +14,31 @@ def verify_renaming_with_csv(folder_path, csv_path):
     - csv_path: Path to the CSV file containing the 'Title_URL' column.
     """
     try:
-        # Read the CSV file
         df = pd.read_csv(csv_path)
     except Exception as e:
         logging.error(f"Error reading CSV file: {e}")
         return
 
-    # Ensure that the 'Title_URL' column exists
     if 'Title_URL' not in df.columns:
         logging.error("'Title_URL' column is missing from the CSV file.")
         return
 
-    # Get a list of all files in the directory
     files = [f for f in Path(folder_path).iterdir() if f.is_file()]
 
-    # Extract the expected filenames from the CSV
     discrepancies = []
-    missing_files = []  # This will now track files that couldn't be downloaded
+    missing_files = []
 
     for index, row in df.iterrows():
-        # Extract the key (last number) from the 'Title_URL' column
         url_key = row['Title_URL'].rstrip('/').split('-')[-1]
 
-        # Find the corresponding file in the folder (matching the key and the index)
-        expected_filename = f"{index + 1}_"  # Start index from 1
-        matching_files = [f for f in files if f.stem.startswith(expected_filename) and f.stem.endswith(url_key)]
+        # Simplified expected filename pattern
+        expected_filename_pattern = f"{index + 1}_"
+
+        matching_files = [f for f in files if f.stem.startswith(expected_filename_pattern)]
 
         if not matching_files:
-            # Since we couldn't find the audio file, check if there's a corresponding JSON
-            json_filename = f"{index + 1}_"
-            matching_json = [f for f in Path(args.json_folder).iterdir() if f.is_file() and f.stem.startswith(json_filename)]
-
-            if not matching_json:
-                # If no JSON, it means the download failed
-                missing_files.append(f"Row {index + 1}: Failed to download file with URL key '{url_key}'")
-                logging.warning(f"Row {index + 1}: Failed to download file with URL key '{url_key}'")
+            missing_files.append(f"Row {index + 1}: Missing audio file with URL key '{url_key}'")
+            logging.warning(f"Row {index + 1}: Missing audio file with URL key '{url_key}'")
         elif len(matching_files) > 1:
             discrepancies.append(f"Row {index + 1}: Multiple audio files found for URL key '{url_key}': {[f.name for f in matching_files]}")
             logging.warning(f"Row {index + 1}: Multiple audio files found for URL key '{url_key}': {[f.name for f in matching_files]}")
@@ -79,11 +70,46 @@ def verify_audio_with_json(folder_path, json_folder_path):
     - folder_path: Path to the folder containing the audio files.
     - json_folder_path: Path to the folder containing the JSON files.
     """
-    # ... (rest of the verify_audio_with_json function remains the same)
+
+    audio_files = [f for f in Path(folder_path).iterdir() if f.is_file()]
+    json_files = [f for f in Path(json_folder_path).iterdir() if f.is_file()]
+
+    audio_indices = set()  # To keep track of audio file indices
+    json_indices = set()  # To keep track of JSON file indices
+    duplicated_audio_files = []  # To store duplicated audio files
+
+    for audio_file in audio_files:
+        try:
+            index = int(audio_file.stem.split("_")[0])
+            if index in audio_indices:
+                duplicated_audio_files.append(audio_file.name)
+            else:
+                audio_indices.add(index)
+        except ValueError:
+            logging.warning(f"Invalid audio filename format: {audio_file.name}")
+
+    for json_file in json_files:
+        try:
+            index = int(json_file.stem.split("_")[0])
+            json_indices.add(index)
+        except ValueError:
+            logging.warning(f"Invalid JSON filename format: {json_file.name}")
+
+    missing_json_indices = audio_indices - json_indices
+    extra_json_indices = json_indices - audio_indices
+
+    if missing_json_indices or extra_json_indices or duplicated_audio_files:
+        if missing_json_indices:
+            print("Missing JSON files for the following audio indices: ", missing_json_indices)
+        if extra_json_indices:
+            print("Extra JSON files found for the following indices (no corresponding audio): ", extra_json_indices)
+        if duplicated_audio_files:
+            print("Duplicated audio files found: ", duplicated_audio_files)
+    else:
+        print("No discrepancies found between audio and JSON files, and no duplicated audio files.")
+
 
 if __name__ == "__main__":
-    import argparse
-
     parser = argparse.ArgumentParser(description='Verify the consistency of renamed files with a CSV file and JSON files.')
     parser.add_argument('folder_path', type=str, help='Path to the folder containing renamed files')
     parser.add_argument('--csv', type=str, help='Path to the CSV file containing the title column', required=True)
