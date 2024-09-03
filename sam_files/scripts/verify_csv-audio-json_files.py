@@ -117,5 +117,8 @@ if __name__ == "__main__":
 
     args = parser.parse_args()
 
+    # Add logging configuration for better debugging
+    logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
     verify_renaming_with_csv(args.folder_path, args.csv)
     verify_audio_with_json(args.folder_path, args.json_folder)

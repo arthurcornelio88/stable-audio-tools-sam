@@ -4,3 +4,4 @@ pathlib
 scikit-learn
 google.cloud
 boto3
+ffmpeg
